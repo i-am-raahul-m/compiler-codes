@@ -1,0 +1,11 @@
+sudo apt update
+sudo apt install git flex bison build-essential
+
+flex prog.l          # generates lex.yy.c
+gcc lex.yy.c -lfl -o prog  # compiles generated C code with the flex library
+./prog               # runs the executable
+
+bison -d calc.y      # generates calc.tab.c and calc.tab.h
+flex calc.l          # generates lex.yy.c
+gcc calc.tab.c lex.yy.c -o calc -lfl -lm
+./calc               # run the calculator
