@@ -40,7 +40,7 @@ NUMBER { $$ = $1; }
 %%
 
 int main() {
-    printf("Enter expressions (Ctrl+D to exit):\n");
+    printf("Enter expressions:\n");
     yyparse();
     return 0;
 }
